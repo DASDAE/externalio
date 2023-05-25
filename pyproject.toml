@@ -1,0 +1,51 @@
+
+# --- Build system configuration
+
+[build-system]
+requires = [ "setuptools>=41", "setuptools-scm", ]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.setuptools]
+include-package-data = true
+# ---> Change pages to the path to your package
+packages = ["externalio"]
+
+[tool.setuptools_scm]  # this empty section enables the tool
+
+# --- Project Metadata
+
+[project]
+name = "externalio"
+dynamic = ["version"]  # version is fetched by setuptools-git-versioning
+
+authors = [
+  { name="Joe Schmoe", email="joe@schmoe.com" },
+]
+
+description = "An example for adding dascore io support in an external package"
+readme = "readme.md"
+license = { file="docs/LICENSE" }
+requires-python = ">=3.9"
+
+# --- Dependencies
+
+# --> Add project specific dependencies here (eg numpy, pytables)
+dependencies = [
+    "dascore",
+]
+
+# ---> Unccoment these lines for listing project information if public
+
+#[project.urls]
+##"Bug Tracker" = "https://github.com/DASDAE/dascore/issues"
+#"Documentation" = "https://dascore.org"
+#"Homepage" = "https://dascore.org"
+
+# ---> Change the name (EXTERNALIO_V1) and make sure the path is right to your defined
+# class (externalio.core:ExternalIOV1
+
+[project.entry-points."dascore.fiber_io"]
+EXTERNALIO_V1 = "externalio.core:ExternalIOV1"
