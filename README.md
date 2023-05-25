@@ -7,6 +7,7 @@ To create your own support for external dascore IO support, do the following:
 2. Rename this package from externalio to your io format name and update the description in `__init__.py`
 3. Look through the pyproject.toml and rename all instances of externalio and follow comment instructions
 4. (best practice) create a directory called "tests" and add some tests/test files.
+5. Update this readme file with relevant information about your format.
 
 Now, if you have done everything correctly, you should be able to install your package with pip (`pip install .` if in the package directory) and dascore will automatically recognize your format without importing this package.
 Try it via:
