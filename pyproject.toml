@@ -2,7 +2,7 @@
 # --- Build system configuration
 
 [build-system]
-requires = [ "setuptools>=41", "setuptools-scm", ]
+requires = [ "setuptools>=41"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools-git-versioning]
@@ -13,15 +13,14 @@ include-package-data = true
 # ---> Change pages to the path to your package
 packages = ["externalio"]
 
-[tool.setuptools_scm]  # this empty section enables the tool
-
 # --- Project Metadata
 
 [project]
 name = "externalio"
-dynamic = ["version"]  # version is fetched by setuptools-git-versioning
+version = "0.0.1"  # be sure to update your version
 
 authors = [
+    # Update the author name/email
   { name="Joe Schmoe", email="joe@schmoe.com" },
 ]
 
